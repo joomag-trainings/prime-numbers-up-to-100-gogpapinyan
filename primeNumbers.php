@@ -1,14 +1,15 @@
 <?php
     $Primes = [];
     for ($i = 2; $i <= 100; ++$i){
-        $k = 0;
+        $isPrime = true;
         for ($j = 2; $j <= $i/2; ++$j){
             if ($i%$j == 0) {
-                ++$k;
+                $isPrime = false;
+                break;
             }
         }
-        if ($k == 0){
-            array_push($Primes,$i);
+        if ($isPrime) {
+            array_push($Primes, $i);
             echo "$i  ";
         }
     }
